@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="./css/tailwind.min.css">
+    <link rel="stylesheet" href="./css/tailwind.css">
+    <title>DarkFox - Contact</title>
+</head>
+
+<body>
+    
+    <div class="max-w-7xl border mx-auto my-20 bg-white w-full flex flex-col ">
+        <div class="grid grid-cols-3  py-10 px-5 gap-x-10">
+            <div class="col-span-2">
+                <h3 class="text-2xl text-blue-dark">Contact us</h3>
+                <p class="text-lg text-blue-dark opacity-90">Does our product sound interesting to you? Feel free to contact us directly or through our contact form
+                    with questions you may have, a discussion on products that could suit your needs, or scheduling a
+                    product demo.
+                </p>
+                <div class="grid grid-cols-2 mt-10">
+                    <div class="flex flex-col">
+                        <h3 class="text-2xl text-blue-dark">Daniel Dybdal</h3>
+                        <h3 class="text-xl font-semibold text-black">CEO</h3>
+                        <p>Phone: <a href="mailto:+4746958631" class="text-blue-dark">+47 46 95 86 31</a></p>
+                        <p>E-Mail: <a href="mailto:daniel@softwrd.ai" class="text-blue-dark">daniel@softwrd.ai</a></p>
+                    </div>
+                    <div class="flex flex-col">
+                        <h3 class="text-2xl text-blue-dark">Haakon Walmann</h3>
+                        <h3 class="text-xl font-semibold text-black">COO</h3>
+                        <p>Phone: <a href="mailto:+40464417" class="text-blue-dark">+40 46 44 17</a></p>
+                        <p>E-Mail: <a href="mailto:haakon@softwrd.ai" class="text-blue-dark">haakon@softwrd.ai</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-1 px-3">
+                <iframe class="h-full w-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1999.6416349934138!2d10.675681651641495!3d59.9214946703546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416db399f67efb%3A0x5f0e1a00428ebff1!2sKarenslyst%20All%C3%A9%2057%2C%200277%20Oslo%2C%20Norway!5e0!3m2!1sen!2sus!4v1621465396085!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 items-center gap-x-10 py-10 px-5 bg-gray-200">
+            <div class="flex flex-col space-y-1">
+                <div>
+                    <h3 class="text-2xl text-blue-dark">Fill in our contact form below</h3>
+                    <p class="text-lg text-blue-dark opacity-90">
+                        - We will reach out to you as soon as possible
+                    </p>
+                </div>
+                <div>
+                    <label for="name" class="sr-only"> name</label>
+                    <input type="text" name="name" id="name" autocomplete="name" class="block w-full py-305 px-2 placeholder-blue-dark border-2 border-gray-400 rounded-lg focus:outline-none bg-transparent" placeholder="Your name">
+                </div>
+                <div>
+                    <label for="email" class="sr-only">email</label>
+                    <input id="email" name="email" type="email" autocomplete="email" class="block w-full py-305 px-2 placeholder-blue-dark border-2 border-gray-400 rounded-lg focus:outline-none bg-transparent" placeholder="Your e-mail">
+                </div>
+                <div>
+                    <label for="phonenumber" class="sr-only">phonenumber</label>
+                    <input type="tel" name="phonenumber" id="phonenumber" autocomplete="tel" class="block w-full py-305 px-2 placeholder-blue-dark border-2 border-gray-400 rounded-lg focus:outline-none bg-transparent" placeholder="Your phone number">
+                </div>
+                <div>
+                    <label for="message" class="sr-only">Write your message here…</label>
+                    <textarea id="message" name="message" rows="4" class="block w-full py-305 px-2 placeholder-blue-dark border-2 border-gray-400 rounded-lg focus:outline-none bg-transparent" placeholder="Write your message here…"></textarea>
+                </div>
+            </div>
+            <div class="col-span-1 px-3 flex flex-col items-center space-y-5 max-w-md">
+                <div class="text-center">
+                    <input type="checkbox" id="check">
+                    <label for="check">
+                        DarkFox’s data treatment processes and protection of your
+                        privacy is described under the Privacy Policy on the bottom of
+                        the page. I have read and accept that DarkFox treats my privacy
+                        data in line with the company’s guidelines for treatment of
+                        personal data.
+                    </label>
+                </div>
+                <a href="#" class="flex items-center justify-between w-44 bg-grey-dark text-white py-2.5 px-1.5 rounded-lg border border-gray-400">
+                    <span>Send</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="text-white h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
