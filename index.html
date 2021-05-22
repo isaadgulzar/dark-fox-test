@@ -10,387 +10,386 @@
     <link rel="stylesheet" href="./css/tailwind.css">
     <title>DarkFox</title>
 </head>
-
 <body>
-    <div class="relative" x-data="data()" x-cloak>
-    <section class="navbar bg-white mt-1 lg:mt-5" id="navbar">
-        <nav class="bg-blue-dark">
-            <!-- component -->
-            <div class="max-w-screen-2xl mx-auto px-4 lg:px-20 flex flex-col md:flex-row justify-between w-full pt-3 md:pt-7 pb-3 container mx-auto">
-                <div class="flex items-center justify-between md:mr-20">
-                    <a href="index.html" class="w-36 h-20 focus:outline-none">
-                        <img src="./assets/navbar-logo.png" class="" alt="">
-                    </a>
-                    <button class="md:hidden mr-3 sm:mr-10 rounded-lg focus:outline-none text-white"
-                        @click="navbar = !navbar">
-                        <svg fill="currentColor" viewBox="0 0 20 20" class="w-8 h-8">
-                            <path x-show="!navbar" fill-rule="evenodd"
-                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-                                clip-rule="evenodd"></path>
-                            <path x-show="navbar" fill-rule="evenodd"
-                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                </div>
-                <div class="flex w-full flex-col md:flex-row md:items-end">
-                    <nav :class="{'flex': navbar, 'hidden': !navbar}" class="hidden md:flex flex-col md:flex-row w-full items-center justify-between">
-                        <div class="flex flex-col md:flex-row gap-y-5 md:gap-y-0 md:gap-x-5">
-                            <div x-data="{active : false}" @click.away="active = false" class="relative">
-                                <a @click="active = !active" href="#" class="flex items-center justify-center w-44 md:w-auto bg-blue-dark text-white py-2.5 px-1.5 rounded-lg border border-gray-400">
-                                    <span>Features</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-white ml-3.5 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                    </svg>
-                                </a>
-                                <div x-show="active" class="absolute -left-10 -bottom-38 z-30 flex flex-col space-y-2 py-2 dropdown-arrow bg-white w-44 text-center">
-                                    <a class="text-base text-blue-dark hover:text-blue-light" href="contact.html">Feature comparison</a>
-                                    <a class="text-base text-blue-dark hover:text-blue-light" href="contact.html">Markets</a>
-                                    <a class="text-base text-blue-dark hover:text-blue-light" href="contact.html">Listings</a>
-                                    <a class="text-base text-blue-dark hover:text-blue-light" href="contact.html">Portfolio</a>
+    <div class="wrapper relative" x-data="data()" x-cloak>
+        <section class="navbar bg-white mt-1 lg:mt-5" id="navbar">
+            <nav class="bg-blue-dark">
+                <!-- Header component -->
+                <div class="max-w-screen-2xl mx-auto px-4 lg:px-20 flex flex-col md:flex-row justify-between w-full pt-3 md:pt-7 pb-3 container mx-auto">
+                    <div class="flex items-center justify-between md:mr-20">
+                        <a href="index.html" class="w-36 h-20 focus:outline-none">
+                            <img src="./assets/navbar-logo.png" class="" alt="">
+                        </a>
+                        <button class="md:hidden mr-3 sm:mr-10 rounded-lg focus:outline-none text-white"
+                            @click="navbar = !navbar">
+                            <svg fill="currentColor" viewBox="0 0 20 20" class="w-8 h-8">
+                                <path x-show="!navbar" fill-rule="evenodd"
+                                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                                    clip-rule="evenodd"></path>
+                                <path x-show="navbar" fill-rule="evenodd"
+                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex w-full flex-col md:flex-row md:items-end">
+                        <nav :class="{'flex': navbar, 'hidden': !navbar}" class="hidden md:flex flex-col md:flex-row w-full items-center justify-between">
+                            <div class="flex flex-col md:flex-row gap-y-5 md:gap-y-0 md:gap-x-5">
+                                <div x-data="{active : false}" @click.away="active = false" class="relative">
+                                    <a @click="active = !active" href="#" class="flex items-center justify-center w-44 md:w-auto bg-blue-dark text-white py-2.5 px-1.5 rounded-lg border border-gray-400">
+                                        <span>Features</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="text-white ml-3.5 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </a>
+                                    <div x-show="active" class="absolute -left-10 -bottom-38 z-30 flex flex-col space-y-2 py-2 dropdown-arrow shadow bg-white w-44 text-center">
+                                        <a class="text-base text-blue-dark hover:text-blue-light" href="features-comparison.html">Feature comparison</a>
+                                        <a class="text-base text-blue-dark hover:text-blue-light" href="markets.html">Markets</a>
+                                        <a class="text-base text-blue-dark hover:text-blue-light" href="listings.html">Listings</a>
+                                        <a class="text-base text-blue-dark hover:text-blue-light" href="portfolio.html">Portfolio</a>
+                                    </div>
+                                </div>
+                                <div x-data="{active : false}" @click.away="active = false" class="relative">
+                                    <a @click="active = !active" href="#" class="flex items-center justify-center w-44 md:w-auto bg-blue-dark text-white py-2.5 px-1.5 rounded-lg border border-gray-400">
+                                        <span>Company</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="text-white ml-3.5 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </a>
+                                    <div x-show="active" class="absolute -left-10 -bottom-22 z-30 flex flex-col space-y-2 py-2 dropdown-arrow shadow bg-white w-44 text-center">
+                                        <a class="text-base text-blue-dark hover:text-blue-light" href="contact.html">Contact Us</a>
+                                        <a class="text-base text-blue-dark hover:text-blue-light" href="index.html">Intro Page</a>
+                                    </div>
                                 </div>
                             </div>
-                            <div x-data="{active : false}" @click.away="active = false" class="relative">
-                                <a @click="active = !active" href="#" class="flex items-center justify-center w-44 md:w-auto bg-blue-dark text-white py-2.5 px-1.5 rounded-lg border border-gray-400">
-                                    <span>Company</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-white ml-3.5 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            <div class="flex flex-col md:flex-row gap-y-5 md:gap-y-0 md:gap-x-5 mt-5 md:mt-0">
+                                <a href="sign-in.html" class="w-44 bg-grey-dark text-white py-2.5 px-1.5 rounded-lg border border-gray-400">
+                                    Sign in
+                                </a>
+                                <a href="create-user.html" class="flex items-center justify-between w-44 bg-grey-dark text-white py-2.5 px-1.5 rounded-lg border border-gray-400">
+                                    <span>Speak to Sales</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-white h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                                     </svg>
                                 </a>
-                                <div x-show="active" class="absolute -left-10 -bottom-22 z-30 flex flex-col space-y-2 py-2 dropdown-arrow bg-white w-44 text-center">
-                                    <a class="text-base text-blue-dark hover:text-blue-light" href="contact.html">Contact Us</a>
-                                    <a class="text-base text-blue-dark hover:text-blue-light" href="contact.html">Intro Page</a>
-                                </div>
                             </div>
-                        </div>
-                        <div class="flex flex-col md:flex-row gap-y-5 md:gap-y-0 md:gap-x-5 mt-5 md:mt-0">
-                            <a href="#" class="w-44 bg-grey-dark text-white py-2.5 px-1.5 rounded-lg border border-gray-400">
-                                Sign in
-                            </a>
-                            <a href="create-user.html" class="flex items-center justify-between w-44 bg-grey-dark text-white py-2.5 px-1.5 rounded-lg border border-gray-400">
-                                <span>Speak to Sales</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="text-white h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                                </svg>
-                            </a>
-                        </div>
-                    </nav>
+                        </nav>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </section>
-    <!-- Hero Section -->
-    <div class="hero-section">
-        <div class="relative bg-hero-section h-80 md:h-120">
-            <div class="h-full w-full flex items-center justify-center">
-                <div class="relative z-20 text-center md:text-left">
-                    <h1 class="text-white text-4xl">Real Estate Analytics. Simplified.</h1>
-                    <p class="text-white text-lg -ml-2">- The one stop shop for property investors, owners, and developers</p>
+            </nav>
+        </section>
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="relative bg-hero-section h-80 md:h-120">
+                <div class="h-full w-full flex items-center justify-center">
+                    <div class="relative z-20 text-center md:text-left">
+                        <h1 class="text-white text-4xl">Real Estate Analytics. Simplified.</h1>
+                        <p class="text-white text-lg -ml-2">- The one stop shop for property investors, owners, and developers</p>
+                    </div>
                 </div>
-            </div>
-            <div class="absolute top-0 z-10 bg-black bg-opacity-40 h-full w-full">
-            </div>
-        </div>
-    </div>
-    <!-- Content Section 1-->
-    <div class="bg-gray-100 px-4">
-        <div class="max-w-6xl mx-auto pt-20 pb-20 grid md:grid-cols-4 space-y-5 md:space-y-0 md:space-x-10">
-            <div class="flex flex-col">
-                <div class="flex items-center justify-center relative border-b-2 border-blue-dark">
-                    <h2 class="text-blue-dark text-xl font-semibold">Analytics</h2>
-                    <img class="h-10 w-10 absolute right-0 bottom-0.5" src="./assets/analytics.png" alt="">
-                </div>
-                <div class="flex items-center justify-center relative">
-                    <p class="text-sm pr-5">
-                        Darkfox’s analytics solution enables
-                        analysis on the property, building, owner,
-                        renter – and market level. The analytics
-                        solutions spans across residential and
-                        commercial real estate.
-                    </p>
-                </div>
-            </div>
-            <div class="flex flex-col">
-                <div class="flex items-center justify-center relative border-b-2 border-blue-dark">
-                    <h2 class="text-blue-dark text-xl font-semibold">Valuation</h2>
-                    <img class="h-10 w-10 absolute right-0 bottom-0.5" src="./assets/valuation.png" alt="">
-                </div>
-                <div class="flex items-center justify-center relative">
-                    <p class="text-sm">
-                        Darkfox has integrated an Automated
-                        Valuation Model (AVM) and Cash Flowbased template in its solution, so that you
-                        can get automated valuation estimates on
-                        properties as well as run the numbers
-                        yourself.
-                    </p>
-                </div>
-            </div>
-            <div class="flex flex-col">
-                <div class="flex items-center justify-center relative border-b-2 border-blue-dark">
-                    <h2 class="text-blue-dark text-xl font-semibold">Process / ERP</h2>
-                    <img class="h-10 w-10 absolute right-0 bottom-0.5" src="./assets/process-erp.png" alt="">
-                </div>
-                <div class="flex items-center justify-center relative">
-                    <p class="text-sm">
-                        Darkfox is a multi-user platform with
-                        process-based functionality. The
-                        implication of this is that employees in the
-                        organization can add, move and comment
-                        on properties, as well as label them
-                        according to the organization’s deal
-                        pipeline.
-                    </p>
-                </div>
-            </div>
-            <div class="flex flex-col">
-                <div class="flex justify-center md:justify-start items-center relative border-b-2 border-blue-dark">
-                    <h2 class="text-blue-dark text-xl font-semibold">Portfolio management</h2>
-                    <img class="h-10 w-10 absolute -right-2.5 bottom-0.5" src="./assets/portfolio.png" alt="">
-                </div>
-                <div class="flex items-center justify-center relative">
-                    <p class="text-sm">
-                        Darkfox includes a portfolio management
-                        system that is integrated with valuation
-                        and process-based functions, so that
-                        properties can be added and removed
-                        from the portfolio. In addition, you will
-                        always have a real-time estimate of your
-                        portfolio value.
-                    </p>
+                <div class="absolute top-0 z-10 bg-black bg-opacity-40 h-full w-full">
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Content Section 2-->
-    <div>
-        <div class="max-w-6xl mx-auto pt-20 pb-20 grid md:grid-cols-5 space-y-10 md:space-y-0 md:space-x-10">
-            <div class="flex flex-col space-y-4">
-                <div class="flex items-center justify-center">
-                    <img class="h-16 w-16" src="./assets/building.png" alt="">
-                    <h2 class="ml-5 text-blue-dark text-2xl font-bold">46</h2>
+        <!-- Content Section 1-->
+        <div class="bg-gray-100 px-4">
+            <div class="max-w-6xl mx-auto pt-20 pb-20 grid md:grid-cols-4 space-y-5 md:space-y-0 md:space-x-10">
+                <div class="flex flex-col">
+                    <div class="flex items-center justify-center relative border-b-2 border-blue-dark">
+                        <h2 class="text-blue-dark text-xl font-semibold">Analytics</h2>
+                        <img class="h-10 w-10 absolute right-0 bottom-0.5" src="./assets/analytics.png" alt="">
+                    </div>
+                    <div class="flex items-center justify-center relative">
+                        <p class="text-sm pr-5">
+                            Darkfox’s analytics solution enables
+                            analysis on the property, building, owner,
+                            renter – and market level. The analytics
+                            solutions spans across residential and
+                            commercial real estate.
+                        </p>
+                    </div>
                 </div>
-                <div class="flex items-center justify-center">
-                    <h2 class="text-blue-dark text-xl font-semibold text-center">Building Completed</h2>
+                <div class="flex flex-col">
+                    <div class="flex items-center justify-center relative border-b-2 border-blue-dark">
+                        <h2 class="text-blue-dark text-xl font-semibold">Valuation</h2>
+                        <img class="h-10 w-10 absolute right-0 bottom-0.5" src="./assets/valuation.png" alt="">
+                    </div>
+                    <div class="flex items-center justify-center relative">
+                        <p class="text-sm">
+                            Darkfox has integrated an Automated
+                            Valuation Model (AVM) and Cash Flowbased template in its solution, so that you
+                            can get automated valuation estimates on
+                            properties as well as run the numbers
+                            yourself.
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="flex flex-col space-y-4">
-                <div class="flex items-center justify-center">
-                    <img class="h-16 w-14" src="./assets/permit.png" alt="">
-                    <h2 class="ml-5 text-blue-dark text-2xl font-bold">29</h2>
+                <div class="flex flex-col">
+                    <div class="flex items-center justify-center relative border-b-2 border-blue-dark">
+                        <h2 class="text-blue-dark text-xl font-semibold">Process / ERP</h2>
+                        <img class="h-10 w-10 absolute right-0 bottom-0.5" src="./assets/process-erp.png" alt="">
+                    </div>
+                    <div class="flex items-center justify-center relative">
+                        <p class="text-sm">
+                            Darkfox is a multi-user platform with
+                            process-based functionality. The
+                            implication of this is that employees in the
+                            organization can add, move and comment
+                            on properties, as well as label them
+                            according to the organization’s deal
+                            pipeline.
+                        </p>
+                    </div>
                 </div>
-                <div class="flex items-center justify-center">
-                    <h2 class="text-blue-dark text-xl font-semibold text-center">Building permit granted</h2>
-                </div>
-            </div>
-            <div class="flex flex-col space-y-4">
-                <div class="flex items-center justify-center">
-                    <img class="h-16 w-14" src="./assets/renters.png" alt="">
-                    <h2 class="ml-5 text-blue-dark text-2xl font-bold">413</h2>
-                </div>
-                <div class="flex items-center justify-center">
-                    <h2 class="text-blue-dark text-xl font-semibold text-center">Renters with address change</h2>
-                </div>
-            </div>
-            <div class="flex flex-col space-y-4">
-                <div class="flex items-center justify-center">
-                    <img class="h-16 w-14" src="./assets/transactions.png" alt="">
-                    <h2 class="ml-5 text-blue-dark text-2xl font-bold">378</h2>
-                </div>
-                <div class="flex items-center justify-center">
-                    <h2 class="text-blue-dark text-xl font-semibold text-center">Transactions <br class="hidden md:block"> (to date)</h2>
-                </div>
-            </div>
-            <div class="flex flex-col items-center space-y-4">
-                <div class="flex items-center justify-center">
-                    <img class="h-16 w-16" src="./assets/volume.png" alt="">
-                    <h2 class="ml-5 text-blue-dark text-2xl font-bold">1.07</h2>
-                </div>
-                <div class="flex items-center justify-center">
-                    <h2 class="text-blue-dark text-xl font-semibold text-center">Transaction volume (M SqMs)</h2>
+                <div class="flex flex-col">
+                    <div class="flex justify-center md:justify-start items-center relative border-b-2 border-blue-dark">
+                        <h2 class="text-blue-dark text-xl font-semibold">Portfolio management</h2>
+                        <img class="h-10 w-10 absolute -right-2.5 bottom-0.5" src="./assets/portfolio.png" alt="">
+                    </div>
+                    <div class="flex items-center justify-center relative">
+                        <p class="text-sm">
+                            Darkfox includes a portfolio management
+                            system that is integrated with valuation
+                            and process-based functions, so that
+                            properties can be added and removed
+                            from the portfolio. In addition, you will
+                            always have a real-time estimate of your
+                            portfolio value.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Content Section 3-->
-    <div class="bg-gray-100">
-        <div class="max-w-6xl mx-auto py-14">
-            <div class="flex flex-col items-center space-y-5">
-                <h2 class="text-blue-dark text-2xl font-semibold">Get started now</h2>
-                <a href="create-user.html" class="flex items-center justify-between w-40 bg-grey-dark text-white py-2.5 px-1.5 rounded-lg border border-gray-400">
-                    <span>Speak to sales</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="text-white h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                </a>
+        <!-- Content Section 2-->
+        <div>
+            <div class="max-w-6xl mx-auto pt-20 pb-20 grid md:grid-cols-5 space-y-10 md:space-y-0 md:space-x-10">
+                <div class="flex flex-col space-y-4">
+                    <div class="flex items-center justify-center">
+                        <img class="h-16 w-16" src="./assets/building.png" alt="">
+                        <h2 class="ml-5 text-blue-dark text-2xl font-bold">46</h2>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <h2 class="text-blue-dark text-xl font-semibold text-center">Building Completed</h2>
+                    </div>
+                </div>
+                <div class="flex flex-col space-y-4">
+                    <div class="flex items-center justify-center">
+                        <img class="h-16 w-14" src="./assets/permit.png" alt="">
+                        <h2 class="ml-5 text-blue-dark text-2xl font-bold">29</h2>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <h2 class="text-blue-dark text-xl font-semibold text-center">Building permit granted</h2>
+                    </div>
+                </div>
+                <div class="flex flex-col space-y-4">
+                    <div class="flex items-center justify-center">
+                        <img class="h-16 w-14" src="./assets/renters.png" alt="">
+                        <h2 class="ml-5 text-blue-dark text-2xl font-bold">413</h2>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <h2 class="text-blue-dark text-xl font-semibold text-center">Renters with address change</h2>
+                    </div>
+                </div>
+                <div class="flex flex-col space-y-4">
+                    <div class="flex items-center justify-center">
+                        <img class="h-16 w-14" src="./assets/transactions.png" alt="">
+                        <h2 class="ml-5 text-blue-dark text-2xl font-bold">378</h2>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <h2 class="text-blue-dark text-xl font-semibold text-center">Transactions <br class="hidden md:block"> (to date)</h2>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center space-y-4">
+                    <div class="flex items-center justify-center">
+                        <img class="h-16 w-16" src="./assets/volume.png" alt="">
+                        <h2 class="ml-5 text-blue-dark text-2xl font-bold">1.07</h2>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <h2 class="text-blue-dark text-xl font-semibold text-center">Transaction volume (M SqMs)</h2>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <footer class="bg-blue-light">
-        <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 lg:px-20 py-8">
-            <div class="flex flex-col items-center md:items-start space-y-2">
-                <div class="flex space-x-3">
-                    <a href="#" class="text-white">
-                        <svg data-prefix="fab" data-icon="facebook-f" class="h-8 w-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-                            <path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
-                        </svg>
-                    </a>
-                    <a href="#" class="text-white">
-                        <svg data-prefix="fab" data-icon="linkedin-in" class="h-8 w-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                            <path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
-                        </svg>
-                    </a>
-                    <a href="#" class="text-white">
-                        <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path>
+        <!-- Content Section 3-->
+        <div class="bg-gray-100">
+            <div class="max-w-6xl mx-auto py-14">
+                <div class="flex flex-col items-center space-y-5">
+                    <h2 class="text-blue-dark text-2xl font-semibold">Get started now</h2>
+                    <a href="create-user.html" class="flex items-center justify-between w-40 bg-grey-dark text-white py-2.5 px-1.5 rounded-lg border border-gray-400">
+                        <span>Speak to sales</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="text-white h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                         </svg>
                     </a>
                 </div>
-                <span class="text-white">@ 2021 R&D Technologies AS</span>
-            </div>
-            <div class="flex flex-col md:flex-row md:divide-x-2 md:space-x-5">
-                <div class="flex flex-col items-center space-y-0 md:space-y-2 md:pr-3">
-                    <a href="#" @click.prevent="terms = true" class="text-white">Terms and conditions</a>
-                    <a href="#" @click.prevent="privacy = true" class="text-white">Privacy Policy</a>
-                </div>
-                <div class="flex flex-col items-center md:items-start space-y-0 md:space-y-2 md:pl-6">
-                    <a href="#" class="text-white font-bold">Contact us:</a>
-                    <a href="mailto:" class="text-white">support@darkfox.ai</a>
-                </div>
             </div>
         </div>
-    </footer>
-    <!-- Terms and Condition Block  -->
-    <div class="fixed inset-0 w-full h-screen flex items-center justify-center z-40 bg-black bg-opacity-60" x-show="terms">
-        <div class="relative text-left bg-white overflow-y-auto h-130 p-4 md:max-w-3xl py-2 pt-7 md:px-6 lg:px-8 shadow-xl rounded-3xl mx-2 md:mx-0" @click.away="terms = false">
-            <p class="text-lg text-blue-dark text-center">
-                Datamaterialet Darkfox er basert på, har blitt gitt til eller innhentet av, R&D Technologies AS fra ulike kilder. 
-                Innholdet som presenteres er basert på dette datamaterialet, og er sammenstilt og analysert ved hjelp av metoder utviklet internt i R&D Technologies AS. 
-                R&D Technologies AS og de som opptrer på vegne av R&D Technologies AS har etterstrebet å innhente all relevant informasjon og data for å forberede dette materialet.           
-            </p>
-            <p class="text-lg text-blue-dark text-center">R&D Technologies AS tar ikke ansvar for insuffisiens, utilstrekkelig informasjon eller data dette materialet er basert på. 
-              R&D Technologies AS har tatt alle rimelige forhåndsregler når det gjelder kvalitetssikring av data, men offentlig tilgjengelig informasjon og data gitt fra andre kilder 
-              har kun blitt bekreftet i henhold til formålet med verktøyene. 
-            </p>
-            <p class="text-lg text-blue-dark text-center">
-                Verken R&D Technologies AS eller personer som opptrer på vegne av R&D Technologies AS i utformingen og utarbeidelsen av 
-                dette materialet kan holdes juridisk ansvarlig for innholdet eller garantere at materialet er fullstendig fritt for feil eller unøyaktigheter. 
-            </p>
-            <p class="text-lg text-blue-dark text-center">
-                Eventuelle referanser dette materialet inneholder knyttet til kilder, publikasjoner eller nettsteder fra tredjeparter, 
-                er kun inkludert til orientering og er kun for informative formål. 
-                De utgjør ikke godkjennelse av materialet i eller på disse kildene, publikasjonene eller nettsidene.
-            </p>
-            <p class="text-lg text-blue-dark text-center">
-                R&D Technologies AS og de som opptrer på vegne av R&D Technologies AS aksepterer ikke ansvar for tap eller skade som oppstår ved å benytte slik informasjon. 
-            </p>
-            <button class="absolute -top-2 right-1.5 text-blue-dark outline-none focus:outline-none" @click="terms = false">
-                <span class="text-4xl">&times</span>
-            </button>
+        <footer class="bg-blue-light">
+            <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 lg:px-20 py-8">
+                <div class="flex flex-col items-center md:items-start space-y-2">
+                    <div class="flex space-x-3">
+                        <a href="https://www.facebook.com/" target="_blank" class="text-white">
+                            <svg data-prefix="fab" data-icon="facebook-f" class="h-8 w-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                <path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/" target="_blank" class="text-white">
+                            <svg data-prefix="fab" data-icon="linkedin-in" class="h-8 w-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" class="text-white">
+                            <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <span class="text-white">@ 2021 R&D Technologies AS</span>
+                </div>
+                <div class="flex flex-col md:flex-row md:divide-x-2 md:space-x-5">
+                    <div class="flex flex-col items-center space-y-0 md:space-y-2 md:pr-3">
+                        <a href="#" @click.prevent="terms = true" class="text-white">Terms and conditions</a>
+                        <a href="#" @click.prevent="privacy = true" class="text-white">Privacy Policy</a>
+                    </div>
+                    <div class="flex flex-col items-center md:items-start space-y-0 md:space-y-2 md:pl-6">
+                        <a href="#" class="text-white font-bold">Contact us:</a>
+                        <a href="mailto:support@darkfox.ai" class="text-white">support@darkfox.ai</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Terms and Condition Block  -->
+        <div class="fixed inset-0 w-full h-screen flex items-center justify-center z-40 bg-black bg-opacity-60" x-show="terms">
+            <div class="relative text-left bg-white overflow-y-auto h-130 p-4 md:max-w-3xl py-2 pt-7 md:px-6 lg:px-8 shadow-xl rounded-3xl mx-2 md:mx-0" @click.away="terms = false">
+                <p class="text-lg text-blue-dark text-center">
+                    Datamaterialet Darkfox er basert på, har blitt gitt til eller innhentet av, R&D Technologies AS fra ulike kilder. 
+                    Innholdet som presenteres er basert på dette datamaterialet, og er sammenstilt og analysert ved hjelp av metoder utviklet internt i R&D Technologies AS. 
+                    R&D Technologies AS og de som opptrer på vegne av R&D Technologies AS har etterstrebet å innhente all relevant informasjon og data for å forberede dette materialet.           
+                </p>
+                <p class="text-lg text-blue-dark text-center">R&D Technologies AS tar ikke ansvar for insuffisiens, utilstrekkelig informasjon eller data dette materialet er basert på. 
+                R&D Technologies AS har tatt alle rimelige forhåndsregler når det gjelder kvalitetssikring av data, men offentlig tilgjengelig informasjon og data gitt fra andre kilder 
+                har kun blitt bekreftet i henhold til formålet med verktøyene. 
+                </p>
+                <p class="text-lg text-blue-dark text-center">
+                    Verken R&D Technologies AS eller personer som opptrer på vegne av R&D Technologies AS i utformingen og utarbeidelsen av 
+                    dette materialet kan holdes juridisk ansvarlig for innholdet eller garantere at materialet er fullstendig fritt for feil eller unøyaktigheter. 
+                </p>
+                <p class="text-lg text-blue-dark text-center">
+                    Eventuelle referanser dette materialet inneholder knyttet til kilder, publikasjoner eller nettsteder fra tredjeparter, 
+                    er kun inkludert til orientering og er kun for informative formål. 
+                    De utgjør ikke godkjennelse av materialet i eller på disse kildene, publikasjonene eller nettsidene.
+                </p>
+                <p class="text-lg text-blue-dark text-center">
+                    R&D Technologies AS og de som opptrer på vegne av R&D Technologies AS aksepterer ikke ansvar for tap eller skade som oppstår ved å benytte slik informasjon. 
+                </p>
+                <button class="absolute -top-2 right-1.5 text-blue-dark outline-none focus:outline-none" @click="terms = false">
+                    <span class="text-4xl">&times</span>
+                </button>
+            </div>
+        </div>
+        <!-- Privacy Policy Block  -->
+        <div class="fixed inset-0 w-full h-screen flex items-center justify-center z-40 bg-black bg-opacity-60" x-c x-show="privacy">
+            <div class="privacy-policy relative text-left bg-white h-130 overflow-y-scroll text-center p-4 md:max-w-3xl py-4 pt-5 md:px-6 lg:px-8 shadow-xl rounded-3xl mx-2 md:mx-0" @click.away="privacy = false">
+                <h5 class="text-base font-bold mt-3">R&D Technologies AS retningslinjer for behandling av persondata</h5>
+                <p class="text-base text-blue-dark">
+                    Vi er forpliktet til å behandle dine personlige opplysninger på en samvittighetsfull, pålitelig og respektfull måte og i samsvar med til enhver tid gjeldende lov om personopplysninger. R&D Technologies AS, ved daglig leder, er behandlingsansvarlig for selskapets behandling av personopplysninger. Vårt grunnlag for å behandle dine personopplysninger vil variere, men vil alltid ha et begrunnet og legitimt formål og hjemmel. 
+                    Vi vil under ingen omstendighet bruke dine persondata til annet formål enn det som opprinnelig er bestemt og godkjent av behandlingsansvarlig.         
+                </p>
+                <h5 class="text-base font-bold mt-3">Hva er personopplysninger</h5>
+                <p class="text-base text-blue-dark">
+                    Personopplysning er en opplysning eller vurdering som kan knyttes til deg som enkeltperson, slik som for eksempel navn, adresse, telefonnummer, e-postadresse, 
+                    IP-adresse, bilnummer, bilder, fingeravtrykk, irismønster, hodeform (for ansiktsgjenkjenning) og personnummer. Opplysninger om adferdsmønstre er også regnet 
+                    som personopplysninger. Opplysninger om hva du handler, ser på TV og hva du søker etter på nettet. Sensitive personopplysninger som blant annet er opplysninger 
+                    om en persons helse, rasemessig eller etnisk bakgrunn, politisk, filosofisk eller religiøs oppfatning er eksempler på sensitive personopplysninger som er 
+                    spesielt beskyttelsesverdig. 
+                </p>
+                <h5 class="text-base font-bold mt-3">Personopplysninger som R&D Technologies AS samler inn og behandler</h5>
+                <p class="text-base text-blue-dark">
+                    Vi samler inn og behandler personopplysninger om våre ansatte eller personer som er i et arbeidsforhold med oss. 
+                    Personopplysninger vi behandler begrenser seg til det som er nødvendig for å kunne oppfylle en ansettelseskontrakt eller arbeidskontrakt.
+                </p>
+                <h5 class="text-base font-bold mt-3">R&D Technologies AS retningslinjer for behandling av persondata</h5>
+                <p class="text-base text-blue-dark">
+                    Vi er forpliktet til å behandle dine personlige opplysninger på en samvittighetsfull, pålitelig og respektfull måte og i samsvar med til enhver tid gjeldende lov om personopplysninger. R&D Technologies AS, ved daglig leder, er behandlingsansvarlig for selskapets behandling av personopplysninger. Vårt grunnlag for å behandle dine personopplysninger vil variere, men vil alltid ha et begrunnet og legitimt formål og hjemmel. 
+                    Vi vil under ingen omstendighet bruke dine persondata til annet formål enn det som opprinnelig er bestemt og godkjent av behandlingsansvarlig.         
+                </p>
+                <p class="text-base text-blue-dark mt-3">
+                    I tillegg samler vi inn personopplysninger om:
+                </p>
+                <h5 class="text-base font-bold mt-3">Våre kunder eller potensielle kunder</h5>
+                <p class="text-base text-blue-dark">
+                    - for å kunne levere eller opplyse om våre tjenester og yte god kundeservice og etablere en god kommunikasjon med nåværende og fremtidige kunder
+                    Våre leverandører- for å kunne følge opp leveranser og leverandørforpliktelser i henhold til kontrakt
+                </p>
+                <h5 class="text-base font-bold mt-3">Besøkende/brukere på vår digitale kanaler/hjemmeside </h5>
+                <p class="text-base text-blue-dark">
+                    - vi samler inn data om våre besøkendes aktiviteter på våre kanaler for å kontinuerlig forbedre våre tjenester, samt dialog med våre interessenter.  
+                </p>
+                <p class="text-base text-blue-dark mt-3">
+                    Vi samler inn dine personlige opplysninger når du er i samhandling med oss via våre ulike kanaler, hvor du får presentert spesifikke vilkår som angir hvilke data, om noen, som samles inn og for hvilket formål. 
+                    Vi anbefaler sterkt at du leser de spesifikke vilkårene som gjelder for våre kanaler, før du godtar vilkårene våre.
+                </p>
+                <h5 class="text-base font-bold mt-3">Våre kanaler per i dag:</h5>
+                <p class="text-base text-blue-dark">
+                    Darkfox hjemmeside https://www.darkfox.no/
+                    R&D Technologies nettsteder på sosiale medier (Linkedin, Facebook osv.)
+                    Vi overfører ikke dine persondata til 3. part utover de selskapene som behandler våre data på vegne av oss og som vi har etablert en databehandleravtale med. 
+                </p>
+                <h5 class="text-base font-bold mt-3">Sikring av dine personopplysninger</h5>
+                <p class="text-base text-blue-dark">
+                    Vi har et ansvar for at dine personopplysninger er tilstrekkelig ivaretatt og sikret. Derfor har vi etablert hensiktsmessige tekniske og organisatoriske 
+                    sikkerhetstiltak som vi gjennomgår og oppdaterer ved behov. Dette gjøres gjennom regelmessige risikovurderinger. 
+                    Dersom R&D Technologies AS skulle oppleve et brudd på datasikkerheten som berører dine opplysninger, 
+                    vil vi dokumentere det og vurdere konsekvensene for ditt personvern. Dersom personvernkonsekvensene 
+                    tilsier det, vil vi rapportere avviket til tilsynsmyndighetene og informere deg om mulige konsekvenser.
+                </p>
+                <h5 class="text-base font-bold mt-3">Dine lovmessige rettigheter</h5>
+                <p class="text-base text-blue-dark">
+                    Vi behandler dine data som er samlet inn om deg i henhold til krav i Lov om Personopplysninger. 
+                    Det betyr også at du har rettigheter i forhold til de data vi har registrert om deg:
+                </p>
+                <h5 class="text-base font-bold mt-3">Rett til informasjon </h5>
+                <p class="text-base text-blue-dark">
+                    – vi skal gi deg den informasjon om hva vi har registrert om deg og til formål vi bruker dine data
+                </p>
+                <h5 class="text-base font-bold mt-3">Rett til innsyn og til å korrigere</h5>
+                <p class="text-base text-blue-dark">
+                    – du skal få rett til innsyn i dine egne data og korrigere disse om nødvendig
+                </p>
+                <h5 class="text-base font-bold mt-3">Retten til å bli glemt </h5>
+                <p class="text-base text-blue-dark">
+                    – du kan kreve å få slettet dine opplysninger dersom ingen annen lov eller løpende kontrakter hindrer det
+                </p>
+                <h5 class="text-base font-bold mt-3">Retten til å motsette seg eller begrense behandling</h5>
+                <p class="text-base text-blue-dark">
+                    du skal kunne motsette deg eller begrense behandlingene som vi foretar med dine persondata
+                </p>
+                <h5 class="text-base font-bold mt-3">Dataportabilitet </h5>
+                <p class="text-base text-blue-dark">
+                    – du kan be om å få utlevert de persondata vi har registrert om deg
+                </p>
+                <h5 class="text-base font-bold mt-3">Rett til å klage </h5>
+                <p class="text-base text-blue-dark">
+                    – dersom du mener vi ikke behandler din persondata i henhold til norsk lov, kan du sende inn klage til vår tilsynsmyndighet (Datatilsynet)
+                </p>
+                <p class="text-base text-blue-dark mt-3">
+                    Dersom du har gitt et samtykke for behandling av dine persondata til et eller flere spesifikke formål, har du rett til når som helst trekke dette samtykke tilbake. 
+                    Når formålet med behandling av persondata er oppnådd, vil vi slette persondata under forutsetning at ingen annen lov bestemmer at vi må beholde og arkiver disse.
+                </p>
+                <h5 class="text-base font-bold mt-3">Kontaktinformasjon</h5>
+                <p class="text-base text-blue-dark">
+                    Disse personvernprinsippene vil kunne være gjenstand for endringer i henhold til endringer og praktisering av gjeldene personvernlovgivning. 
+                    Dersom du har spørsmål eller kommentarer til disse retningslinjene for personvern, ber vi deg kontakte vår behandlingsansvarlig hos:=
+                </p>
+                <p class="text-base text-blue-dark mt-3">R&D Technologies AS</p>
+                <p class="text-base text-blue-dark">Bjerketvedtvegen 22</p>
+                <p class="text-base text-blue-dark">3914 Porsgrunn</p>
+                <button class="absolute -top-2 right-1.5 text-blue-dark outline-none focus:outline-none" @click="privacy = false">
+                    <span class="text-4xl">&times</span>
+                </button>
+            </div>
         </div>
     </div>
-    <!-- Privacy Policy Block  -->
-    <div class="fixed inset-0 w-full h-screen flex items-center justify-center z-40 bg-black bg-opacity-60" x-c x-show="privacy">
-        <div class="privacy-policy relative text-left bg-white h-130 overflow-y-scroll text-center p-4 md:max-w-3xl py-4 pt-5 md:px-6 lg:px-8 shadow-xl rounded-3xl mx-2 md:mx-0" @click.away="privacy = false">
-            <h5 class="text-base font-bold mt-3">R&D Technologies AS retningslinjer for behandling av persondata</h5>
-            <p class="text-base text-blue-dark">
-                Vi er forpliktet til å behandle dine personlige opplysninger på en samvittighetsfull, pålitelig og respektfull måte og i samsvar med til enhver tid gjeldende lov om personopplysninger. R&D Technologies AS, ved daglig leder, er behandlingsansvarlig for selskapets behandling av personopplysninger. Vårt grunnlag for å behandle dine personopplysninger vil variere, men vil alltid ha et begrunnet og legitimt formål og hjemmel. 
-                Vi vil under ingen omstendighet bruke dine persondata til annet formål enn det som opprinnelig er bestemt og godkjent av behandlingsansvarlig.         
-            </p>
-            <h5 class="text-base font-bold mt-3">Hva er personopplysninger</h5>
-            <p class="text-base text-blue-dark">
-                Personopplysning er en opplysning eller vurdering som kan knyttes til deg som enkeltperson, slik som for eksempel navn, adresse, telefonnummer, e-postadresse, 
-                IP-adresse, bilnummer, bilder, fingeravtrykk, irismønster, hodeform (for ansiktsgjenkjenning) og personnummer. Opplysninger om adferdsmønstre er også regnet 
-                som personopplysninger. Opplysninger om hva du handler, ser på TV og hva du søker etter på nettet. Sensitive personopplysninger som blant annet er opplysninger 
-                om en persons helse, rasemessig eller etnisk bakgrunn, politisk, filosofisk eller religiøs oppfatning er eksempler på sensitive personopplysninger som er 
-                spesielt beskyttelsesverdig. 
-            </p>
-            <h5 class="text-base font-bold mt-3">Personopplysninger som R&D Technologies AS samler inn og behandler</h5>
-            <p class="text-base text-blue-dark">
-                Vi samler inn og behandler personopplysninger om våre ansatte eller personer som er i et arbeidsforhold med oss. 
-                Personopplysninger vi behandler begrenser seg til det som er nødvendig for å kunne oppfylle en ansettelseskontrakt eller arbeidskontrakt.
-            </p>
-            <h5 class="text-base font-bold mt-3">R&D Technologies AS retningslinjer for behandling av persondata</h5>
-            <p class="text-base text-blue-dark">
-                Vi er forpliktet til å behandle dine personlige opplysninger på en samvittighetsfull, pålitelig og respektfull måte og i samsvar med til enhver tid gjeldende lov om personopplysninger. R&D Technologies AS, ved daglig leder, er behandlingsansvarlig for selskapets behandling av personopplysninger. Vårt grunnlag for å behandle dine personopplysninger vil variere, men vil alltid ha et begrunnet og legitimt formål og hjemmel. 
-                Vi vil under ingen omstendighet bruke dine persondata til annet formål enn det som opprinnelig er bestemt og godkjent av behandlingsansvarlig.         
-            </p>
-            <p class="text-base text-blue-dark mt-3">
-                I tillegg samler vi inn personopplysninger om:
-            </p>
-            <h5 class="text-base font-bold mt-3">Våre kunder eller potensielle kunder</h5>
-            <p class="text-base text-blue-dark">
-                - for å kunne levere eller opplyse om våre tjenester og yte god kundeservice og etablere en god kommunikasjon med nåværende og fremtidige kunder
-                Våre leverandører- for å kunne følge opp leveranser og leverandørforpliktelser i henhold til kontrakt
-            </p>
-            <h5 class="text-base font-bold mt-3">Besøkende/brukere på vår digitale kanaler/hjemmeside </h5>
-            <p class="text-base text-blue-dark">
-                - vi samler inn data om våre besøkendes aktiviteter på våre kanaler for å kontinuerlig forbedre våre tjenester, samt dialog med våre interessenter.  
-            </p>
-            <p class="text-base text-blue-dark mt-3">
-                Vi samler inn dine personlige opplysninger når du er i samhandling med oss via våre ulike kanaler, hvor du får presentert spesifikke vilkår som angir hvilke data, om noen, som samles inn og for hvilket formål. 
-                Vi anbefaler sterkt at du leser de spesifikke vilkårene som gjelder for våre kanaler, før du godtar vilkårene våre.
-            </p>
-            <h5 class="text-base font-bold mt-3">Våre kanaler per i dag:</h5>
-            <p class="text-base text-blue-dark">
-                Darkfox hjemmeside https://www.darkfox.no/
-                R&D Technologies nettsteder på sosiale medier (Linkedin, Facebook osv.)
-                Vi overfører ikke dine persondata til 3. part utover de selskapene som behandler våre data på vegne av oss og som vi har etablert en databehandleravtale med. 
-            </p>
-            <h5 class="text-base font-bold mt-3">Sikring av dine personopplysninger</h5>
-            <p class="text-base text-blue-dark">
-                Vi har et ansvar for at dine personopplysninger er tilstrekkelig ivaretatt og sikret. Derfor har vi etablert hensiktsmessige tekniske og organisatoriske 
-                sikkerhetstiltak som vi gjennomgår og oppdaterer ved behov. Dette gjøres gjennom regelmessige risikovurderinger. 
-                Dersom R&D Technologies AS skulle oppleve et brudd på datasikkerheten som berører dine opplysninger, 
-                vil vi dokumentere det og vurdere konsekvensene for ditt personvern. Dersom personvernkonsekvensene 
-                tilsier det, vil vi rapportere avviket til tilsynsmyndighetene og informere deg om mulige konsekvenser.
-            </p>
-            <h5 class="text-base font-bold mt-3">Dine lovmessige rettigheter</h5>
-            <p class="text-base text-blue-dark">
-                Vi behandler dine data som er samlet inn om deg i henhold til krav i Lov om Personopplysninger. 
-                Det betyr også at du har rettigheter i forhold til de data vi har registrert om deg:
-            </p>
-            <h5 class="text-base font-bold mt-3">Rett til informasjon </h5>
-            <p class="text-base text-blue-dark">
-                – vi skal gi deg den informasjon om hva vi har registrert om deg og til formål vi bruker dine data
-            </p>
-            <h5 class="text-base font-bold mt-3">Rett til innsyn og til å korrigere</h5>
-            <p class="text-base text-blue-dark">
-                – du skal få rett til innsyn i dine egne data og korrigere disse om nødvendig
-            </p>
-            <h5 class="text-base font-bold mt-3">Retten til å bli glemt </h5>
-            <p class="text-base text-blue-dark">
-                – du kan kreve å få slettet dine opplysninger dersom ingen annen lov eller løpende kontrakter hindrer det
-            </p>
-            <h5 class="text-base font-bold mt-3">Retten til å motsette seg eller begrense behandling</h5>
-            <p class="text-base text-blue-dark">
-                du skal kunne motsette deg eller begrense behandlingene som vi foretar med dine persondata
-            </p>
-            <h5 class="text-base font-bold mt-3">Dataportabilitet </h5>
-            <p class="text-base text-blue-dark">
-                – du kan be om å få utlevert de persondata vi har registrert om deg
-            </p>
-            <h5 class="text-base font-bold mt-3">Rett til å klage </h5>
-            <p class="text-base text-blue-dark">
-                – dersom du mener vi ikke behandler din persondata i henhold til norsk lov, kan du sende inn klage til vår tilsynsmyndighet (Datatilsynet)
-            </p>
-            <p class="text-base text-blue-dark mt-3">
-                Dersom du har gitt et samtykke for behandling av dine persondata til et eller flere spesifikke formål, har du rett til når som helst trekke dette samtykke tilbake. 
-                Når formålet med behandling av persondata er oppnådd, vil vi slette persondata under forutsetning at ingen annen lov bestemmer at vi må beholde og arkiver disse.
-            </p>
-            <h5 class="text-base font-bold mt-3">Kontaktinformasjon</h5>
-            <p class="text-base text-blue-dark">
-                Disse personvernprinsippene vil kunne være gjenstand for endringer i henhold til endringer og praktisering av gjeldene personvernlovgivning. 
-                Dersom du har spørsmål eller kommentarer til disse retningslinjene for personvern, ber vi deg kontakte vår behandlingsansvarlig hos:=
-            </p>
-            <p class="text-base text-blue-dark mt-3">R&D Technologies AS</p>
-            <p class="text-base text-blue-dark">Bjerketvedtvegen 22</p>
-            <p class="text-base text-blue-dark">3914 Porsgrunn</p>
-            <button class="absolute -top-2 right-1.5 text-blue-dark outline-none focus:outline-none" @click="privacy = false">
-                <span class="text-4xl">&times</span>
-            </button>
-        </div>
-    </div>
-</div>
     
 
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
